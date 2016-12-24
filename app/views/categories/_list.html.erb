@@ -1,0 +1,32 @@
+<div id="filterrific_results">
+  <div>
+    <% unless @categories.nil? && @categories == 0 %>
+        <%= page_entries_info @categories %>
+    <% end %>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% unless @categories.nil? && @categories == 0 %>
+        <% @categories.each do |item| %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= item.name %></td>
+            </tr>
+        <% end %>
+    <% end %>
+
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="2"><%= paginate @categories %></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

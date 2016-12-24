@@ -1,0 +1,9 @@
+/**
+ * Created by gustavo on 12/23/16.
+ */
+<%# app/views/categories/index.js.erb %>
+<% js = escape_javascript(
+    render(partial: 'categories/list', locals: { categories: @categories })
+) %>
+
+$("#filterrific_results").html("<%= js %>");
